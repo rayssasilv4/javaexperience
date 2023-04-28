@@ -18,7 +18,7 @@ import javaexperience.repository.UsuarioRepository;
 @RestController
 public class UsuarioController {
 
-    @PostMapping(value = "/Usuarios")
+    @PostMapping(value = "/usuarios")
     public Usuario criarNovoUsuario(@RequestBody Usuario Usuario) {
         return usuarioRepository.save(Usuario);
     }
@@ -33,7 +33,7 @@ public class UsuarioController {
         return usuarioRepository.findById(id);
     }
 
-    @GetMapping(value = "/usuarios/{email}")
+    @GetMapping(value = "/usuarios/email/{email}")
     public Optional<Usuario> obterUsuarioPeloEmail(@PathVariable(value = "email") String email) {
         return usuarioRepository.findByEmail(email);
     }
